@@ -11,5 +11,5 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] }),
     tailwindcss(),
   ],
-  base: "/e-commerce-Site"
+  base: "/e-commerce-site"
 })
