@@ -9,6 +9,6 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] }),
     tailwindcss(),
-    base: "/e-commerce-site"
   ],
+  base: "/e-commerce-site/"
 })
