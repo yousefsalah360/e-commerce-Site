@@ -11,14 +11,17 @@ import Contact from './pages/contact'
 import Login from './pages/login'
 import Navbar from './components/NavBar'
 import Footer from './components/footer'
+import SearchBar from './components/searchBar'
+
 
 function App() {
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
       <Navbar />
+      <SearchBar />
       <Routes>
         <Route path='/' element={<Home />} /> 
-        <Route path='/product' element={<Product />} />
+        <Route path='/product/:productId' element={<Product />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/place-order' element={<PlaceOrder />} />
         <Route path='/orders' element={<Orders />} />
