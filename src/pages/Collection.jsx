@@ -20,31 +20,31 @@ function Collection() {
   const [type, setType] = useState([]);
 
   const toggleCategory = (e) => {
-    if(e.target.checked){
-      setCategory(prevCategory => prevCategory.filter((item) => item !== e.target.value))
+    if(e.target.includes){
+      setCategory(prev => prev.filter(item => item !== e.target.value))
     }else{
-      setCategory(prevCategory => [...prevCategory, e.target.value])
+      setCategory(prev => [...prev, e.target.value])
     }
   }
 
   const toggleType = (e) => {
-    if(e.target.checked){
-      setType(prevType => prevType.filter((item) => item !== e.target.value))
+    if(e.target.includes){
+      setType(prev => prev.filter(item => item !== e.target.value))
     }else{
-      setType(prevType => [...prevType, e.target.value])
+      setType(prev => [...prev, e.target.value])
     }
   }
 
 
   const filterProducts = () => {
-    let filteredProducts = products
+    let filteredProducts = products.slice()
 
     if(category.length > 0){
-      filteredProducts = filteredProducts.filter((item) => category.includes(item.category))
+      filteredProducts = filteredProducts.filter(item => category.includes(item.category))
     }
 
     if(type.length > 0){
-      filteredProducts = filteredProducts.filter((item) => type.includes(item.type))
+      filteredProducts = filteredProducts.filter(item => type.includes(item.type))
     }
 
     setCollection(filteredProducts)
