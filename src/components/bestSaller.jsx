@@ -1,18 +1,13 @@
 import { ShopContext } from '../context/shopContext'
-import { useContext, useState, useEffect } from 'react'
+import { useContext } from 'react'
 import Title from './title'
 import ProductItem from './productItem'
 
 export const BestSaller = () => {
 
     const { products } = useContext(ShopContext)
-    
-    const [bestSallerProducts, setBestSallerProducts] = useState([])
 
-    useEffect(() => {
-        const bestProducts = products.filter((item) => (item.bestseller))
-        setBestSallerProducts(bestProducts.slice(0, 5))
-    },[])
+    const bestSallerProducts = products.filter((item) => item.bestseller).slice(0, 5)
 
   return (
       <div className='my-10'>
